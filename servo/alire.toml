@@ -1,0 +1,30 @@
+version = "0.1.0"
+
+authors = [
+    "AdaCore, Olivier Henley",
+]
+
+description = "servo drivers"
+
+licenses = "BSD-3-Clause"
+
+maintainers = [
+    "Olivier Henley <olivier.henley@gmail.com>",
+]
+
+maintainers-logins = [
+    "ohenley",
+]
+
+name = "servo"
+
+tags = [
+    "embedded",
+    "stm32",
+]
+
+[[depends-on]]
+stm32f4xxm_devebox = "0.1.0"
+
+[[pins]]
+gnat_arm_elf = { version='12.2.1' }
