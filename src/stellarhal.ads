@@ -5,3 +5,6 @@ with LORA;
 with PA1616D;
 with SERVO;
 with UART;
+
+package stellarhal is
+end stellarhal;
