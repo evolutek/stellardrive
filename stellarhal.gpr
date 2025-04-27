@@ -1,14 +1,22 @@
 with "config/stellarhal_config.gpr";
-
-with "as5600";
-with "bmp390";
-with "bno085";
-with "lora";
-with "pa1616d";
-with "servo";
-with "uart";
+with "config/stm32_hal_config.gpr";
 
 project Stellarhal is
+
+   for Target use "arm-eabi";
+
+   Runtime_Device := "";
+   
+   case stm32_hal_config.DEVICE is
+      when "stm32f407xx" =>
+         Runtime_Device := "stm32f4";
+      when "stm32f429" =>
+         Runtime_Device := "stm32f429disco";
+      when "stm32f746" =>
+         Runtime_Device := "stm32f746disco";
+   end case;
+
+   for Runtime ("Ada") use "embedded-" & Runtime_Device;
 
    for Library_Name use "Stellarhal";
    for Library_Version use Project'Library_Name & ".so." & Stellarhal_Config.Crate_Version;

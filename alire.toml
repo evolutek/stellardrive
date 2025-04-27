@@ -24,10 +24,3 @@ stm32f4xxm_devebox = "0.1.0"
 
 [[pins]]
 gnat_arm_elf = { version='12.2.1' }
-as5600 = { path = 'as5600' }
-bmp390 = { path = 'bmp390' }
-bno085 = { path = 'bno085' }
-lora = { path = 'lora' }
-pa1616d = { path = 'pa1616d' }
-servo = { path = 'servo' }
-uart = { path = 'uart' }
