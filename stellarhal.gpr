@@ -1,6 +1,14 @@
 with "config/stellarhal_config.gpr";
 with "config/stm32_hal_config.gpr";
 
+with "as5600";
+with "bmp390";
+with "bno085";
+with "lora";
+with "pa1616d";
+with "servo";
+with "uart";
+
 project Stellarhal is
 
    for Target use "arm-eabi";
