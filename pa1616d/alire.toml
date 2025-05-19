@@ -1,27 +1,13 @@
-version = "0.1.0"
-
-authors = [
-    "AdaCore, Olivier Henley",
-]
-
-description = "pa1616d driver"
-
-licenses = "BSD-3-Clause"
-
-maintainers = [
-    "Olivier Henley <olivier.henley@gmail.com>",
-]
-
-maintainers-logins = [
-    "ohenley",
-]
-
 name = "pa1616d"
+description = "pa1616d driver"
+version = "0.1.0-dev"
 
-tags = [
-    "embedded",
-    "stm32",
-]
+authors = ["Vladislav Kupin"]
+maintainers = ["Vladislav Kupin <vlad.kupin@proton.me>"]
+maintainers-logins = ["axterd"]
+licenses = "BSD-3-Clause"
+website = "https://github.com/evolutek"
+tags = ["embaded", "stm32", "stellahal", "evolutek"]
 
 [[depends-on]]
 stm32f4xxm_devebox = "0.1.0"

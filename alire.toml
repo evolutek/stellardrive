@@ -1,17 +1,12 @@
 name = "stellarhal"
-
 description = "Stellarhal library"
-
 version = "0.1.0-dev"
 
 authors = ["Célian Aldehuelo-Mateos, Vladislav Kupin"]
 maintainers = ["Vladislav Kupin <vlad.kupin@proton.me>"]
 maintainers-logins = ["axterd"]
-
-licenses = "MIT"
-
+licenses = "BSD-3-Clause"
 website = "https://github.com/evolutek"
-
 tags = [
     "embedded",
     "stm32",
@@ -24,7 +19,6 @@ stm32f4xxm_devebox = "0.1.0"
 
 [[pins]]
 gnat_arm_elf = { version='12.2.1' }
-as5600 = { path = 'as5600' }
 bmp390 = { path = 'bmp390' }
 bno085 = { path = 'bno085' }
 lora = { path = 'lora' }

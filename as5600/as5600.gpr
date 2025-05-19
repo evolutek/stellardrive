@@ -1,8 +1,7 @@
 with "config/as5600_config.gpr";
 with "config/stm32_hal_config.gpr";
 
-
-project as5600 is
+project As5600 is
 
    for Target use "arm-eabi";
 
@@ -18,20 +17,22 @@ project as5600 is
    end case;
    
    for Runtime ("Ada") use "embedded-" & Runtime_Device;
-   for Library_Name use "as5600";
-   for Library_Version use Project'Library_Name & ".so." & as5600_Config.Crate_Version;
-   for Source_Dirs use ("src/");
-   for Object_Dir use "obj/" & as5600_Config.Build_Profile;
+
+   for Library_Name use "As5600";
+   for Library_Version use Project'Library_Name & ".so." & As5600_Config.Crate_Version;
+
+   for Source_Dirs use ("src/", "config/");
+   for Object_Dir use "obj/" & As5600_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
    for Library_Dir use "lib";
 
    type Library_Type_Type is ("relocatable", "static", "static-pic");
    Library_Type : Library_Type_Type :=
-     external ("as5600_LIBRARY_TYPE", external ("LIBRARY_TYPE", "static"));
+     external ("AS5600_LIBRARY_TYPE", external ("LIBRARY_TYPE", "static"));
    for Library_Kind use Library_Type;
 
    package Compiler is
-      for Default_Switches ("Ada") use as5600_Config.Ada_Compiler_Switches & "-gnateE";
+      for Default_Switches ("Ada") use As5600_Config.Ada_Compiler_Switches;
    end Compiler;
 
    package Binder is
@@ -42,4 +43,4 @@ project as5600 is
       for Artifacts (".") use ("share");
    end Install;
 
-end as5600;
+end As5600;

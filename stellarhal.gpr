@@ -1,7 +1,6 @@
 with "config/stellarhal_config.gpr";
 with "config/stm32_hal_config.gpr";
 
-with "as5600";
 with "bmp390";
 with "bno085";
 with "lora";

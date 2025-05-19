@@ -1,8 +1,7 @@
 with "config/bmp390_config.gpr";
 with "config/stm32_hal_config.gpr";
 
-
-project bmp390 is
+project Bmp390 is
 
    for Target use "arm-eabi";
 
@@ -16,22 +15,23 @@ project bmp390 is
       when "stm32f746" =>
          Runtime_Device := "stm32f746disco";
    end case;
-   
+
    for Runtime ("Ada") use "embedded-" & Runtime_Device;
-   for Library_Name use "bmp390";
-   for Library_Version use Project'Library_Name & ".so." & bmp390_Config.Crate_Version;
-   for Source_Dirs use ("src/");
-   for Object_Dir use "obj/" & bmp390_Config.Build_Profile;
+   for Library_Name use "Bmp390";
+   for Library_Version use Project'Library_Name & ".so." & Bmp390_Config.Crate_Version;
+
+   for Source_Dirs use ("src/", "config/");
+   for Object_Dir use "obj/" & Bmp390_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
    for Library_Dir use "lib";
 
    type Library_Type_Type is ("relocatable", "static", "static-pic");
    Library_Type : Library_Type_Type :=
-     external ("bmp390_LIBRARY_TYPE", external ("LIBRARY_TYPE", "static"));
+     external ("BNO085_LIBRARY_TYPE", external ("LIBRARY_TYPE", "static"));
    for Library_Kind use Library_Type;
 
    package Compiler is
-      for Default_Switches ("Ada") use bmp390_Config.Ada_Compiler_Switches & "-gnateE";
+      for Default_Switches ("Ada") use Bmp390_Config.Ada_Compiler_Switches;
    end Compiler;
 
    package Binder is
@@ -42,4 +42,4 @@ project bmp390 is
       for Artifacts (".") use ("share");
    end Install;
 
-end bmp390;
+end Bmp390;
