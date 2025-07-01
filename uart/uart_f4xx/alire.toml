@@ -1,0 +1,14 @@
+name = "uart_f4xx"
+description = "UART driver"
+version = "0.1.0"
+
+authors = ["Célian Aldehuelo-Mateos, Vladislav Kupin"]
+maintainers = ["Vladislav Kupin <vlad.kupin@proton.me>"]
+maintainers-logins = ["axterd"]
+licenses = "BSD-3-Clause"
+website = "https://github.com/evolutek"
+tags = ["embedded", "stm32", "stellarhal", "evolutek"]
+
+[[depends-on]]
+gnat_arm_elf = "^12"
+stm32f4xxm_devebox = "0.1.0"

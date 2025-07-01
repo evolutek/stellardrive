@@ -1,4 +1,4 @@
-name = "uart"
+name = "uart_g4xx"
 description = "UART driver"
 version = "0.1.0"
 
@@ -10,5 +10,5 @@ website = "https://github.com/evolutek"
 tags = ["embedded", "stm32", "stellarhal", "evolutek"]
 
 [[depends-on]]
-gnat_arm_elf = "^12"
-stm32f4xxm_devebox = "0.1.0"
+gnat_arm_elf = ">=12"
+stm32g4_hal = ">=0.1.0"
