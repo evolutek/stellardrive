@@ -1,7 +1,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 
 with STM32.Device;
-use STM32;
+with STM32; use STM32;
 
 package body UART is
 
@@ -28,6 +28,10 @@ package body UART is
         Device.Enable_Clock (port.port.all);
         Device.Reset (port.port.all);
 
+        --  if port.port.Periph = Device.UART_4.Periph then
+        --      return;
+        --  end if;
+
         USARTs.Disable (port.port.all);
 
         USARTs.Set_Baud_Rate    (port.port.all, Baudrate);
@@ -35,7 +39,7 @@ package body UART is
         USARTs.Set_Stop_Bits    (port.port.all, USARTs.Stopbits_1);
         USARTs.Set_Word_Length  (port.port.all, USARTs.Word_Length_8);
         USARTs.Set_Parity       (port.port.all, USARTs.No_Parity);
-        USARTs.Set_Flow_Control (port.port.all, USARTs.No_Flow_Control);
+        -- USARTs.Set_Flow_Control (port.port.all, USARTs.No_Flow_Control);
         USARTs.Set_Oversampling_Mode (port.port.all, USARTs.Oversampling_By_16);
 
         USARTs.Enable (port.port.all);

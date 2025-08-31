@@ -10,6 +10,5 @@ website = "https://github.com/evolutek"
 tags = ["embedded", "stm32", "stellarhal", "evolutek"]
 
 [[depends-on]]
-gnat_arm_elf = "^12"
-stm32f4xxm_devebox = "0.1.0"
+gnat_arm_elf = ">=12"
 uart = "0.1.0"

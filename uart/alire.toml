@@ -1,4 +1,4 @@
-name = "uart_g4xx"
+name = "uart"
 description = "UART driver"
 version = "0.1.0"
 
@@ -9,6 +9,16 @@ licenses = "BSD-3-Clause"
 website = "https://github.com/evolutek"
 tags = ["embedded", "stm32", "stellarhal", "evolutek"]
 
+[configuration.variables]
+[configuration.variables.device]
+default = "stm32_f4"
+type = "Enum"
+values = [
+    "stm32_f4",
+    "stm32_g4",
+]
+
 [[depends-on]]
 gnat_arm_elf = ">=12"
-stm32g4_hal = ">=0.1.0"
+stm32_hal = "0.1.0"
+#stm32g4_hal = ">=0.1.0"
