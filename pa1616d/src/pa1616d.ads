@@ -3,7 +3,7 @@ with UART;
 package PA1616D is
 
     type PA1616D_Device is record
-        port : not null access UART.UART_Port;
+        port : not null access UART.UART_Port'Class;
         longitude : Float := 0.0;
         latitude : Float := 0.0;
     end record;

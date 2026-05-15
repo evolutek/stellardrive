@@ -1,7 +1,7 @@
 with "config/pa1616d_config.gpr";
 with "config/stm32_hal_config.gpr";
 
-with "uart";
+with "../uart/uart";
 
 project Pa1616d is
 

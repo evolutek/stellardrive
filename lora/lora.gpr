@@ -1,7 +1,7 @@
 with "config/lora_config.gpr";
 with "config/stm32_hal_config.gpr";
 
-with "uart";
+with "../uart/uart";
 
 project Lora is
 

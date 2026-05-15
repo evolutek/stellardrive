@@ -4,7 +4,7 @@ with UART;
 package LoRa is
 
     type LoRa_Device is record
-        port : not null access UART.UART_Port;
+        port : not null access UART.UART_Port'Class;
     end record;
 
     procedure init (device : in out LoRa_Device);

@@ -1,5 +1,5 @@
-name = "pa1616d"
-description = "pa1616d driver"
+name = "uart"
+description = "Abstract UART interface"
 version = "0.1.0"
 
 authors = ["Célian Aldehuelo-Mateos, Vladislav Kupin"]
@@ -7,7 +7,7 @@ maintainers = ["Vladislav Kupin <vlad.kupin@proton.me>"]
 maintainers-logins = ["axterd"]
 licenses = "BSD-3-Clause"
 website = "https://github.com/evolutek"
-tags = ["embaded", "stm32", "stellahal", "evolutek"]
+tags = ["embedded", "stm32", "stellarhal", "evolutek"]
 
 [[depends-on]]
-stm32_hal = ">=0.1.0"
+gnat_arm_elf = "^12"
