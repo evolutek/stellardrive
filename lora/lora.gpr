@@ -1,24 +1,10 @@
 with "config/lora_config.gpr";
-with "config/stm32_hal_config.gpr";
 
 with "../uart/uart";
 
 project Lora is
 
    for Target use "arm-eabi";
-
-   Runtime_Device := "";
-   
-   case stm32_hal_config.DEVICE is
-      when "stm32f407xx" =>
-         Runtime_Device := "stm32f4";
-      when "stm32f429" =>
-         Runtime_Device := "stm32f429disco";
-      when "stm32f746" =>
-         Runtime_Device := "stm32f746disco";
-   end case;
-
-   for Runtime ("Ada") use "embedded-" & Runtime_Device;
    for Library_Name use "Lora";
    for Library_Version use Project'Library_Name & ".so." & Lora_Config.Crate_Version;
 

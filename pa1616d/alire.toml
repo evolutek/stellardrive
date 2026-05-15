@@ -10,4 +10,4 @@ website = "https://github.com/evolutek"
 tags = ["embaded", "stm32", "stellahal", "evolutek"]
 
 [[depends-on]]
-stm32_hal = ">=0.1.0"
+hal = "0.4.0"
