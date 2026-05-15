@@ -10,7 +10,7 @@ project Uart_G4xx is
    for Library_Name use "Uart";
    for Library_Version use Project'Library_Name & ".so." & Uart_G4xx_Config.Crate_Version;
 
-   for Source_Dirs use ("src/", "config/");
+   for Source_Dirs use ("../src/", "config/");
    for Object_Dir use "obj/" & Uart_G4xx_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
    for Library_Dir use "lib";
