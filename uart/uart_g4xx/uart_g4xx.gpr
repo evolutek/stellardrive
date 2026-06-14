@@ -2,7 +2,7 @@ with "config/uart_g4xx_config.gpr";
 with "config/stm32g4_hal_config.gpr";
 with "runtime_build.gpr";
 
-with "../uart";
+with "uart";
 
 project Uart_G4xx is
 

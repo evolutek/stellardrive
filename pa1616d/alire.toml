@@ -7,7 +7,9 @@ maintainers = ["Vladislav Kupin <vlad.kupin@proton.me>"]
 maintainers-logins = ["axterd"]
 licenses = "BSD-3-Clause"
 website = "https://github.com/evolutek"
-tags = ["embaded", "stm32", "stellahal", "evolutek"]
+tags = ["embedded", "stm32", "stellarhal", "evolutek"]
 
 [[depends-on]]
-hal = "0.4.0"
+gnat_arm_elf = "^12"
+hal = "~0.3.0"
+uart = "0.1.0"

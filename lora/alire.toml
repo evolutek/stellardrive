@@ -11,4 +11,5 @@ tags = ["embedded", "stm32", "stellarhal", "evolutek"]
 
 [[depends-on]]
 gnat_arm_elf = "^12"
-hal = "0.4.0"
+hal = "~0.3.0"
+uart = "0.1.0"

@@ -1,6 +1,6 @@
 with "config/pa1616d_config.gpr";
 
-with "../uart/uart";
+with "uart";
 
 project Pa1616d is
 

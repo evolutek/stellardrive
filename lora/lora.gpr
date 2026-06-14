@@ -1,6 +1,6 @@
 with "config/lora_config.gpr";
 
-with "../uart/uart";
+with "uart";
 
 project Lora is
 

@@ -1,7 +1,7 @@
 with "config/uart_f4xx_config.gpr";
 with "config/stm32_hal_config.gpr";
 
-with "../uart";
+with "uart";
 
 project Uart_F4xx is
 
