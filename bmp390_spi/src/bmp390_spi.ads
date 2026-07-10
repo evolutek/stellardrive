@@ -1,0 +1,39 @@
+with HAL;        use HAL;
+with STM32.SPI;
+with STM32.GPIO;
+
+--  BMP390 pressure/temperature sensor over SPI (mode 3). The SPI port must be
+--  configured by the caller; the chip-select GPIO is driven by this driver.
+package BMP390_SPI is
+
+   type BMP390_Params is record
+      T1  : Float;
+      T2  : Float;
+      T3  : Float;
+      P1  : Float;
+      P2  : Float;
+      P3  : Float;
+      P4  : Float;
+      P5  : Float;
+      P6  : Float;
+      P7  : Float;
+      P8  : Float;
+      P9  : Float;
+      P10 : Float;
+      P11 : Float;
+   end record;
+
+   type BMP390_Device is record
+      port         : not null access STM32.SPI.SPI_Port;
+      cs           : STM32.GPIO.GPIO_Point;        -- active-low chip select
+      sea_pressure : Float := 101325.0;
+      params       : BMP390_Params;
+   end record;
+
+   procedure init (device : in out BMP390_Device);
+   procedure get_temp_and_pres (device : in out BMP390_Device; temperature : out Float; pressure : out Float);
+   function compute_altitude (device : in out BMP390_Device; pressure : Float; temperature : Float) return Float;
+   procedure get_altitude (device : in out BMP390_Device; altitude : in out Float);
+   function chip_id (device : in out BMP390_Device) return UInt8;  -- reg 0x00, expect 0x60
+
+end BMP390_SPI;
