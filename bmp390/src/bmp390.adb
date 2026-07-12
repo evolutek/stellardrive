@@ -171,6 +171,13 @@ package body BMP390 is
       read_config(device);
    end init;
 
+   function chip_id (device : in out BMP390_Device) return UInt8 is
+      value : UInt8;
+   begin
+      read_byte (device, 16#00#, value);
+      return value;
+   end chip_id;
+
    function compensate_temp(device : in out BMP390_Device; uncomp_temp: Float) return Float
    is
       partial_data1: constant Float := uncomp_temp - device.params.T1;
@@ -231,6 +238,11 @@ package body BMP390 is
       g: constant Float := 9.80665;
       M: constant Float := 0.0289644;
    begin
+      -- Guard: P/Pb must be > 0 for the float '**', otherwise Argument_Error.
+      -- Happens with invalid/early pressure readings (sensor not ready yet).
+      if P <= 0.0 then
+         return 0.0;
+      end if;
       -- ((T + 273.15) / -0.0065) * (((P / 101325.0) ^ ((-8.31432*-0.0065) / (9.80665*0.0289644))) - 1)
       return (Tb / Lb) * (((P / Pb) ** ((-R*Lb) / (g*M))) - 1.0);
    end compute_altitude;

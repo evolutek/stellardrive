@@ -31,5 +31,6 @@ package BMP390 is
   procedure get_temp_and_pres(device : in out BMP390_Device; temperature : out Float; pressure : out Float);
   function compute_altitude(device : in out BMP390_Device; pressure : Float; temperature : Float) return Float;
   procedure get_altitude(device : in out BMP390_Device; altitude : in out Float);
+  function chip_id (device : in out BMP390_Device) return UInt8;  -- reg 0x00, expect 0x60
 
 end BMP390;
